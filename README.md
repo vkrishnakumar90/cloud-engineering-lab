@@ -1,282 +1,168 @@
-# Linux Fundamentals for Cloud Platform Engineers
+# ☁️ Cloud Engineering Lab
 
-> Part of **Project Phoenix – Cloud Engineering Lab**
->
-> This repository documents my journey from Release Engineering to Cloud Platform Engineering through hands-on learning, public-safe notes, and production-oriented examples.
+> A hands-on learning repository documenting my journey from **Release Engineering** to **Cloud Platform Engineering**.
 
 ---
 
-# Overview
+## 🚀 About This Repository
 
-Linux is the foundation of modern cloud infrastructure. Most cloud servers, Kubernetes worker nodes, containers, and platform services run on Linux.
+Cloud Engineering Lab is my personal learning portfolio, created as part of **Project Phoenix**—a structured transformation focused on building strong cloud engineering fundamentals through hands-on practice, documentation, and interview preparation.
 
-Learning Linux is not about memorizing commands—it's about understanding how systems work and how to troubleshoot them methodically.
+Rather than collecting certifications alone, this repository focuses on understanding concepts from first principles and applying them in real-world scenarios.
 
----
-
-# 🌱 Simple Explanation
-
-Think of Linux as a house.
-
-```
-/
-├── home
-├── etc
-├── var
-├── usr
-├── tmp
-```
-
-Every room has a purpose.
-
-If you know where things are kept, you can quickly find what you need.
+The journey covers Linux, Networking, Docker, Kubernetes, AWS, Infrastructure as Code, CI/CD, Observability, and Platform Engineering.
 
 ---
 
-# 🚀 Engineering Perspective
+## 🎯 Learning Philosophy
 
-As a Cloud Platform Engineer or SRE, Linux is the operating system you'll interact with daily.
+Every topic in this repository follows the same approach:
 
-Typical activities include:
-
-* Reading application logs
-* Verifying configurations
-* Investigating production issues
-* Managing services
-* Inspecting running processes
-* Debugging network connectivity
-
-Understanding the Linux filesystem significantly reduces troubleshooting time.
-
----
-
-# Important Directories
-
-| Directory  | Purpose                          | Memory Trick           |
-| ---------- | -------------------------------- | ---------------------- |
-| `/`        | Root directory                   | Everything starts here |
-| `/home`    | User home directories            | User files             |
-| `/etc`     | Configuration files              | Recipe Book            |
-| `/var/log` | Log files                        | Diary                  |
-| `/tmp`     | Temporary files                  | Temporary workspace    |
-| `/usr/bin` | Executable programs and commands | Tool Box               |
-
----
-
-# Essential Commands
-
-## pwd
-
-Displays the current working directory.
-
-```bash
-pwd
+```text
+Learn
+   ↓
+Practice
+   ↓
+Explain
+   ↓
+Interview
+   ↓
+Review
 ```
 
-Remember:
+The objective is not just to know *what* a technology does, but also:
 
-> **Where am I?**
+* Why it exists
+* How it works
+* Where it is used
+* How to troubleshoot it
+* How to explain it during technical interviews
 
 ---
 
-## ls
+# 📚 Repository Structure
 
-Lists files and folders in the current directory.
+```text
+cloud-engineering-lab/
 
-```bash
-ls
+├── 01-linux/
+├── 02-networking/
+├── 03-docker/
+├── 04-kubernetes/
+├── 05-aws/
+├── 06-terraform/
+├── 07-github-actions/
+└── README.md
 ```
 
-Remember:
+Each topic will gradually include:
 
-> **What is here?**
-
----
-
-## cd
-
-Changes the current directory.
-
-```bash
-cd /etc
-```
-
-Remember:
-
-> **Go there.**
+* Overview
+* Core Concepts
+* Hands-on Examples
+* Production Scenarios
+* Interview Notes
+* Key Takeaways
 
 ---
 
-## cat
+# 🛠 Topics Covered
 
-Displays the complete contents of a file.
+### Operating Systems
 
-```bash
-cat application.conf
-```
+* Linux Fundamentals
+* Shell Commands
+* Process Management
+* File System
+* Service Troubleshooting
 
-Best for smaller files.
+### Networking
 
----
+* DNS
+* TCP/IP
+* TLS
+* HTTP/HTTPS
+* Load Balancing
 
-## less
+### Containers
 
-Reads large files one page at a time.
+* Docker
+* Images
+* Containers
+* Volumes
+* Networking
 
-```bash
-less application.log
-```
+### Container Orchestration
 
-Exit using:
+* Kubernetes
+* Pods
+* Deployments
+* Services
+* Ingress
+* ConfigMaps
+* Secrets
 
-```
-q
-```
+### Cloud
 
----
+* Amazon Web Services (AWS)
+* IAM
+* EC2
+* VPC
+* S3
+* CloudWatch
+* Systems Manager
 
-## grep
+### DevOps & Platform Engineering
 
-Searches for specific text inside files.
-
-```bash
-grep -i error application.log
-```
-
-Useful when working with large log files.
-
----
-
-# Absolute vs Relative Paths
-
-## Absolute Path
-
-Starts with `/`
-
-Example:
-
-```bash
-cd /etc/nginx
-```
-
-Works regardless of the current directory.
-
----
-
-## Relative Path
-
-Starts from the current directory.
-
-Example:
-
-```bash
-cd Documents
-```
-
-Depends on where you currently are.
+* Git & GitHub
+* GitHub Actions
+* CI/CD
+* Infrastructure as Code
+* Observability
+* Site Reliability Engineering (SRE)
 
 ---
 
-# Production Scenario
+# 💻 Hands-on Learning
 
-## Scenario
+Every concept is reinforced through practical exercises, labs, and troubleshooting scenarios.
 
-Users report that the application is returning HTTP 503 errors.
-
-A structured investigation might look like this:
-
-```
-Read Logs
-        ↓
-Understand the Error
-        ↓
-Verify Configuration
-        ↓
-Check Dependencies
-        ↓
-Apply the Correct Fix
-        ↓
-Validate
-```
-
-Avoid restarting services before understanding the root cause.
+The goal is to build confidence by understanding **why** systems behave the way they do—not by memorizing commands.
 
 ---
 
-# Interview Notes
+# 🎤 Interview Preparation
 
-### Q: Why check `/var/log` before `/etc`?
+Alongside technical learning, every topic is also studied from an interview perspective.
 
-Because logs provide evidence of what happened.
+Each module focuses on:
 
-Configuration files explain how the application is expected to behave.
-
-Logs help identify the problem before investigating configuration.
-
----
-
-### Q: Why use `grep` instead of opening the entire log?
-
-Large production logs may contain thousands of lines.
-
-`grep` allows engineers to quickly search for relevant messages such as:
-
-* error
-* exception
-* timeout
-* refused
-
-This speeds up troubleshooting significantly.
+* Common interview questions
+* Production troubleshooting scenarios
+* Engineering reasoning
+* Best practices
 
 ---
 
-### Q: Why does `cd /etc` work from any location?
+# 🌱 Current Progress
 
-Because it is an **absolute path**.
-
-Paths beginning with `/` always start from the Linux root directory.
-
----
-
-# 💡 Memory Tricks
-
-### `/etc`
-
-📖 Recipe Book
-
-Changing the recipe changes how the application behaves.
+* ✅ Linux Fundamentals
+* 🚧 Networking
+* ⏳ Docker
+* ⏳ Kubernetes
+* ⏳ AWS
+* ⏳ Terraform
+* ⏳ GitHub Actions
 
 ---
 
-### `/var/log`
+# 📌 Guiding Principle
 
-📔 Diary
-
-Logs record what happened.
-
-Changing the diary does **not** change how the application behaves.
-
----
-
-### Linux Navigation
-
-* `pwd` → Where am I?
-* `ls` → What is here?
-* `cd` → Go there.
-* `grep` → Find text.
-* `less` → Read comfortably.
-
----
-
-# Engineering Mindset
-
-Technology changes.
-
-Commands change.
+Technology evolves.
 
 Tools change.
 
-Engineering thinking remains the same.
+Engineering thinking remains constant.
 
 ```
 Evidence
@@ -286,14 +172,12 @@ Hypothesis
 Action
 ```
 
-This mindset applies equally to Linux, Docker, Kubernetes, AWS, and modern cloud platforms.
+This principle guides how I approach debugging, system design, and production troubleshooting throughout this learning journey.
 
 ---
 
-## Learning Status
+## 📖 Note
 
-* ✅ Linux Filesystem
-* ✅ Essential Navigation Commands
-* ✅ Reading Logs
-* ✅ Basic Troubleshooting Mindset
-* ✅ Production Investigation Workflow
+This repository contains only public learning material, hands-on exercises, and self-authored documentation.
+
+It intentionally excludes confidential information, proprietary configurations, credentials, internal infrastructure details, and organization-specific content.
