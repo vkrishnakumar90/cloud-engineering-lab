@@ -68,3 +68,19 @@ Running
 The old Pod was not repaired.
 
 A brand new Pod with a different name was created.
+
+## Observation 7
+
+Experiment:
+Deleted the ReplicaSet manually.
+
+Observation:
+- Deployment immediately recreated the ReplicaSet.
+- The ReplicaSet retained the same generated name because the Deployment template was unchanged.
+- A brand new Pod was created with a different name.
+- The old Pod was not repaired or reused.
+
+Learning:
+Deployment owns ReplicaSets.
+ReplicaSets own Pods.
+Pods are ephemeral and are replaced rather than repaired.
